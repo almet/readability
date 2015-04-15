@@ -1,45 +1,44 @@
 <div id="readability-page-1" class="page">
-    <article role="article">
-        <p>For more than a decade the Web has used XMLHttpRequest (XHR) to achieve
-            asynchronous requests in JavaScript. While very useful, XHR is not a very
-            nice API. It suffers from lack of separation of concerns. The input, output
-            and state are all managed by interacting with one object, and state is
-            tracked using events. Also, the event-based model doesn’t play well with
-            JavaScript’s recent focus on Promise- and generator-based asynchronous
-            programming.</p>
-        <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch API</a> intends
-            to fix most of these problems. It does this by introducing the same primitives
-            to JS that are used in the HTTP protocol. In addition, it introduces a
-            utility function <code>fetch()</code> that succinctly captures the intention
-            of retrieving a resource from the network.</p>
-        <p>The <a href="https://fetch.spec.whatwg.org">Fetch specification</a>, which
-            defines the API, nails down the semantics of a user agent fetching a resource.
-            This, combined with ServiceWorkers, is an attempt to:</p>
-        <ol>
-            <li>Improve the offline experience.</li>
-            <li>Expose the building blocks of the Web to the platform as part of the
-                <a
-                href="https://extensiblewebmanifesto.org/">extensible web movement</a>.</li>
-        </ol>
-        <p>As of this writing, the Fetch API is available in Firefox 39 (currently
-            Nightly) and Chrome 42 (currently dev). Github has a <a href="https://github.com/github/fetch">Fetch polyfill</a>.</p>
-        
+    <p>For more than a decade the Web has used XMLHttpRequest (XHR) to achieve
+        asynchronous requests in JavaScript. While very useful, XHR is not a very
+        nice API. It suffers from lack of separation of concerns. The input, output
+        and state are all managed by interacting with one object, and state is
+        tracked using events. Also, the event-based model doesn’t play well with
+        JavaScript’s recent focus on Promise- and generator-based asynchronous
+        programming.</p>
+    <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch API</a> intends
+        to fix most of these problems. It does this by introducing the same primitives
+        to JS that are used in the HTTP protocol. In addition, it introduces a
+        utility function <code>fetch()</code> that succinctly captures the intention
+        of retrieving a resource from the network.</p>
+    <p>The <a href="https://fetch.spec.whatwg.org">Fetch specification</a>, which
+        defines the API, nails down the semantics of a user agent fetching a resource.
+        This, combined with ServiceWorkers, is an attempt to:</p>
+    <ol>
+        <li>Improve the offline experience.</li>
+        <li>Expose the building blocks of the Web to the platform as part of the
+            <a
+            href="https://extensiblewebmanifesto.org/">extensible web movement</a>.</li>
+    </ol>
+    <p>As of this writing, the Fetch API is available in Firefox 39 (currently
+        Nightly) and Chrome 42 (currently dev). Github has a <a href="https://github.com/github/fetch">Fetch polyfill</a>.</p>
+    
 <h2>Feature detection</h2>
 
-        <p>Fetch API support can be detected by checking for <code>Headers</code>,<code>Request</code>, <code>Response</code> or <code>fetch</code> on
-            the <code>window</code> or <code>worker</code> scope.</p>
-        
+    <p>Fetch API support can be detected by checking for <code>Headers</code>,<code>Request</code>, <code>Response</code> or <code>fetch</code> on
+        the <code>window</code> or <code>worker</code> scope.</p>
+    
 <h2>Simple fetching</h2>
 
-        <p>The most useful, high-level part of the Fetch API is the <code>fetch()</code> function.
-            In its simplest form it takes a URL and returns a promise that resolves
-            to the response. The response is captured as a <code>Response</code> object.</p>
-        <div
-        class="wp_syntax">
-            <table>
-                <tbody>
-                    <tr>
-                        <td class="code"><pre class="javascript">fetch<span>(</span><span>"/data.json"</span><span>)</span>.<span>then</span><span>(</span><span>function</span><span>(</span>res<span>)</span> <span>{</span>
+    <p>The most useful, high-level part of the Fetch API is the <code>fetch()</code> function.
+        In its simplest form it takes a URL and returns a promise that resolves
+        to the response. The response is captured as a <code>Response</code> object.</p>
+    <div
+    class="wp_syntax">
+        <table>
+            <tbody>
+                <tr>
+                    <td class="code"><pre class="javascript">fetch<span>(</span><span>"/data.json"</span><span>)</span>.<span>then</span><span>(</span><span>function</span><span>(</span>res<span>)</span> <span>{</span>
   <span>// res instanceof Response == true.</span>
   <span>if</span> <span>(</span>res.<span>ok</span><span>)</span> <span>{</span>
     res.<span>json</span><span>(</span><span>)</span>.<span>then</span><span>(</span><span>function</span><span>(</span>data<span>)</span> <span>{</span>
@@ -52,10 +51,10 @@
   console.<span>log</span><span>(</span><span>"Fetch failed!"</span><span>,</span> e<span>)</span><span>;</span>
 <span>}</span><span>)</span><span>;</span></pre>
 
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 </div>
 <p>Submitting some parameters, it would look like this:</p>
 <div class="wp_syntax">
@@ -566,13 +565,9 @@ Kelly for helping with the specification and implementation.</em>
 
             </p>
             <footer class="entry-meta">
-                <p>Posted by <a href="https://hacks.mozilla.org/author/nmarathemozilla-com/"
-                    title="Posts by Nikhil Marathe" class="url fn" rel="author">Nikhil Marathe</a>
-on
-                    <time
-                    datetime="2015-03-10T08:05:41-07:00">March 10, 2015</time>at
-                        <time datetime="PDT08:05:41-07:00">08:05</time>
+                <p>Posted by on
+                    <time datetime="2015-03-10T08:05:41-07:00">March 10, 2015</time>at
+                    <time datetime="PDT08:05:41-07:00">08:05</time>
                 </p>
             </footer>
-            </article>
             </div>
